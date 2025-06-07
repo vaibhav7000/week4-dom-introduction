@@ -65,11 +65,19 @@
       calculateSumServer(firstNumber, secondNumber);secondNumber
     }
 
-    function calculateSumSersdver(firstNumber, secondNumber){
+    function calculateSumServer(firstNumber, secondNumber){
       // sending request to the backend server using fetch (browser apis that allows to send request to the http servers)
-      fetch('http://localhost:3000/findsum');
-      const element = document.getElementById("sum-output");
-      element.textContent = "Hello world"
+      fetch(`http://localhost:3000/findsum?a=${firstNumber}&b=${secondNumber}`).then(function(response) {
+        console.log(response)
+        if(response.status != "200") {
+          alert("enter valid numbers")
+          return
+        }
+        response.text().then(function(finalData) {
+          const element = document.getElementById("sum-output");
+          element.innerText = finalData;
+        })
+      });
 
     }
 

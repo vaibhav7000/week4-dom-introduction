@@ -1,1 +1,2 @@
 console.log('Hello!');
+// Document (DOM) is the extra functionality provided by the browser (just like setTimeout) so that we can change / manupulate the web-documents using JS. Browser are made to execute JS, hence provided document / DOM through which we can change the web-documents using js.

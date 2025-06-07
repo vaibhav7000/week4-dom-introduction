@@ -1,23 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+    .custom-form {
+      display: flex;
+      gap: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>calculator</h1>
+
+  <form class="custom-form">
+    <div class="custom-input" id="input-1-container" >
+      <label for="input-1">First Number</label>
+      <input type="number" id="input-1" name="num_1" placeholder="Enter first number" />
+    </div>
+
+    <div class="custom-input" id="input-2-container">
+      <label for="input-2">Second Number</label>
+      <input type="number" name="num_2" id="input-2" placeholder="Enter second number"/>
+    </div>
+
+    <div class="button-container">
+      <button class="btn">calculate sum</button>
+    </div>
+
+  </form>
+
+</body>
 </html>
+
+<!-- labels use "for" attribute and input uses "id" to sync with each other -->
+<!-- by default form send the request with query-params as keys with name of input  -->
+<!-- if there is button inside the form this will do the same thing sending the same request -->
+
+<!-- in websites "dynamic" means to change the content of the websites after the webpage is loaded -->
+
+<!-- document / Dom lets you to make the website dynamic (changing the content on thw website after it is loaded) -->

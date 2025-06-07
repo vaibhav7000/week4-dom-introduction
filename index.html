@@ -16,7 +16,7 @@
 <body>
   <h1>calculator</h1>
 
-  <form class="custom-form">
+  <form onsubmit="formSubmit(event)" class="custom-form">
     <div class="custom-input" id="input-1-container" >
       <label for="input-1">First Number</label>
       <input type="number" id="input-1" name="num_1" placeholder="Enter first number" />
@@ -27,11 +27,69 @@
       <input type="number" name="num_2" id="input-2" placeholder="Enter second number"/>
     </div>
 
-    <div class="button-container">
+    <div id="button-container">
       <button class="btn">calculate sum</button>
     </div>
 
   </form>
+
+  <div id="sum-output">
+
+  </div>
+
+  <script>
+    function formSubmit(event) {
+      event.preventDefault();
+
+      let firstNumber = document.getElementById("input-1").value; // gets the value present inside the input
+      let secondNumber = document.getElementById("input-2").value;
+
+      // if(!firstNumber) {
+      //   // empty string
+      //   alert("Provide the first number");
+      //   return
+      // }
+
+      // firstNumber = parseInt(firstNumber);
+
+
+      // if(!secondNumber) {
+      //   alert("Provide the second number");
+      //   return
+      // }
+
+      // secondNumber = parseInt(secondNumber);
+
+      // calculateSum(firstNumber, secondNumber);
+
+      calculateSumServer(firstNumber, secondNumber);secondNumber
+    }
+
+    function calculateSumSersdver(firstNumber, secondNumber){
+      // sending request to the backend server using fetch (browser apis that allows to send request to the http servers)
+      fetch('http://localhost:3000/findsum');
+      const element = document.getElementById("sum-output");
+      element.textContent = "Hello world"
+
+    }
+
+    function calculateSum(val1, val2) {
+      const sum = val1 + val2;
+
+      const element = document.getElementById("sum-output");
+
+      element.innerText = `sum of  numbers are ${sum}`;
+
+      // major ways to add the content inside the element
+      // if adding the content as html => use innerHTML also returns us the full content present inside the element as html 
+
+      // if adding only text => use textContent / innerText
+
+      // textContent returns all the text present inside the html does not respect html tags and css styles, purelly all text will be returned
+
+      // innerText respects the html and css and will add according to it
+    }
+  </script>
 
 </body>
 </html>
@@ -43,3 +101,5 @@
 <!-- in websites "dynamic" means to change the content of the websites after the webpage is loaded -->
 
 <!-- document / Dom lets you to make the website dynamic (changing the content on thw website after it is loaded) -->
+
+<!-- document / DOM represents the "website / webpage" and provides apis to change the content present inside the webpage (making the webpage dynamic) -->
